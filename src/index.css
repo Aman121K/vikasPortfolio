@@ -1,0 +1,14 @@
+@font-face {
+  font-family: Inter;
+  font-display: swap;
+  src: local("Inter");
+}
+
+#root {
+  min-height: 100vh;
+}
+
+::selection {
+  color: #07120f;
+  background: #8ce8d2;
+}
