@@ -194,17 +194,16 @@ main {
   box-shadow: 0 0 28px var(--amber);
 }
 
-.monogram {
+.profile-photo {
   display: grid;
   width: 104px;
   height: 104px;
-  place-items: center;
-  color: #06241f;
-  background: linear-gradient(135deg, var(--teal), #8ce8d2 52%, var(--amber));
+  object-fit: cover;
+  object-position: center;
+  background: #dff7ee;
   border: 3px solid rgba(255, 255, 255, 0.88);
-  border-radius: 28px;
-  font-size: 34px;
-  font-weight: 950;
+  border-radius: 50%;
+  box-shadow: 0 22px 70px rgba(37, 199, 167, 0.26);
 }
 
 .eyebrow {
@@ -688,11 +687,9 @@ footer a {
     margin-bottom: 22px;
   }
 
-  .monogram {
+  .profile-photo {
     width: 72px;
     height: 72px;
-    border-radius: 18px;
-    font-size: 24px;
   }
 
   h1 {

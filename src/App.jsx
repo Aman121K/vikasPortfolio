@@ -206,7 +206,7 @@ function App() {
         <div className="hero-shell">
           <div className="orbit-card" aria-hidden="true">
             <span className="orbital-ring" />
-            <span className="monogram">VT</span>
+            <img className="profile-photo" src="/vikas-profile.jpg" alt="" />
           </div>
 
           <p className="eyebrow">
