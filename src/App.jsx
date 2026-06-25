@@ -1,16 +1,22 @@
 import {
   ArrowUpRight,
   BriefcaseBusiness,
+  CheckCircle2,
   Code2,
   Database,
   Download,
+  Globe2,
+  Layers3,
   Mail,
   MapPin,
   Menu,
   Phone,
   Server,
+  ShieldCheck,
   Smartphone,
   Sparkles,
+  Users,
+  Workflow,
   X,
 } from 'lucide-react'
 import { useState } from 'react'
@@ -19,16 +25,34 @@ import './App.css'
 const navItems = ['Profile', 'Experience', 'Projects', 'Skills', 'Contact']
 
 const stats = [
-  { value: '5+', label: 'Years building production apps' },
-  { value: '2020', label: 'Started professional engineering' },
-  { value: '8.4', label: 'B.Tech CSE CGPA' },
+  { value: '5+', label: 'Years in production engineering' },
+  { value: '20+', label: 'Apps, portals, and dashboards shipped' },
+  { value: '4', label: 'Core strengths: Mobile, Web, APIs, Data' },
 ]
 
 const highlights = [
-  'React Native apps for iOS and Android',
-  'Node.js APIs with REST, GraphQL, and Socket.IO',
-  'Admin dashboards, internal tools, and portals',
-  'MySQL and MongoDB backed product systems',
+  'Owns delivery across discovery, frontend, backend, release, and maintenance.',
+  'Strong fit for product engineering teams that need mobile plus backend ownership.',
+  'Comfortable with customer-facing apps, internal tools, admin workflows, and operations portals.',
+  'Builds with REST, GraphQL, Socket.IO, MySQL, MongoDB, React, React Native, and Node.js.',
+]
+
+const valuePillars = [
+  {
+    icon: Workflow,
+    title: 'End-to-end delivery',
+    text: 'Turns ambiguous product requirements into shipped mobile, web, API, and admin workflows.',
+  },
+  {
+    icon: ShieldCheck,
+    title: 'Production mindset',
+    text: 'Focuses on reliable API behavior, maintainable code paths, and operational visibility.',
+  },
+  {
+    icon: Users,
+    title: 'Business alignment',
+    text: 'Builds systems used by customers, cafes, support, finance, and internal operations teams.',
+  },
 ]
 
 const experience = [
@@ -38,11 +62,11 @@ const experience = [
     period: 'Feb 2023 - Present',
     location: 'Gurgaon',
     summary:
-      'Owns core app, backend, admin, and internal operations products for a fast-growing coffee brand.',
+      'Owns mobile, backend, admin, and internal operations products for a fast-growing consumer brand.',
     points: [
-      'Designed and developed the Blue Tokai mobile app experience.',
-      'Built reimbursement, admin, and cafe router downtime portals.',
-      'Improved backend API flows for reliability and operational speed.',
+      'Delivered customer-facing React Native app features across ordering, cafe pickup, dine-in, product discovery, offers, and account journeys.',
+      'Built reimbursement, admin, and cafe router downtime portals that improved internal tracking and operational coordination.',
+      'Improved Node.js API flows and data-backed workflows for reliability, visibility, and day-to-day business speed.',
     ],
   },
   {
@@ -53,9 +77,9 @@ const experience = [
     summary:
       'Delivered mobile products across social, fan engagement, and gaming communities.',
     points: [
-      'Developed Scord App, Fanful App, and gamesee.gg features.',
-      'Contributed to cross-platform app delivery with React Native.',
-      'Worked closely with product teams in a fast-paced delivery environment.',
+      'Developed Scord, Fanful, and gamesee.gg features for communities, fan engagement, and gaming products.',
+      'Contributed reusable React Native screens, API integrations, release fixes, and responsive product experiences.',
+      'Worked closely with product and QA teams in a fast-paced delivery environment with changing priorities.',
     ],
   },
   {
@@ -66,9 +90,9 @@ const experience = [
     summary:
       'Built consumer mobile experiences and backend systems with real-time communication features.',
     points: [
-      'Implemented endless-scroll experiences in Radio FM mobile app.',
-      'Built Socket.IO chat features for Radio FM and Screen Recorder.',
-      'Worked on DaramFlicks and other mobile product initiatives.',
+      'Implemented endless-scroll media experiences and high-traffic mobile UI flows in Radio FM.',
+      'Built Socket.IO chat features for Radio FM and Screen Recorder with real-time message behavior.',
+      'Worked on DaramFlicks and other mobile initiatives spanning app UI, backend integration, and delivery support.',
     ],
   },
 ]
@@ -79,7 +103,7 @@ const projects = [
     type: 'Mobile Commerce',
     url: 'https://play.google.com/store/apps/details?id=com.bluetokaicoffee.app',
     description:
-      'Customer app for ordering coffee, order-ahead cafe pickup, dine-in table ordering, roasted beans, brewing gear, offers, and community updates.',
+      'Mobile commerce experience for ordering coffee, order-ahead cafe pickup, dine-in table ordering, roasted beans, brewing gear, offers, and community updates.',
     tags: ['React Native', 'Node.js', 'MySQL', 'Coffee App'],
   },
   {
@@ -87,7 +111,7 @@ const projects = [
     type: 'Internal Tooling',
     url: 'https://reimbursement.bluetokaicoffee.com/login',
     description:
-      'A structured business portal that helps teams submit, track, and process reimbursement requests through cleaner internal workflows.',
+      'Business workflow portal for submitting, tracking, and processing reimbursement requests with cleaner internal visibility.',
     tags: ['ReactJS', 'Node.js', 'Dashboard', 'Portal'],
   },
   {
@@ -95,7 +119,7 @@ const projects = [
     type: 'Grocery Delivery',
     url: 'https://play.google.com/store/apps/details?id=com.selnox.rozdeal',
     description:
-      'Local grocery delivery app for groceries, fruits, vegetables, snacks, dairy, and daily essentials with fast checkout and delivery tracking.',
+      'Local grocery delivery app with product discovery, checkout flows, daily essentials categories, and delivery tracking.',
     tags: ['React Native', 'Delivery', 'Checkout'],
   },
   {
@@ -103,7 +127,7 @@ const projects = [
     type: 'Fan Engagement App',
     url: 'https://www.businesswire.com/news/home/20230523006096/en/Rae-Sremmurd-SCORD-Announce-SREMM4LIFE-Video-Game-Challenge',
     description:
-      'Fan engagement app for artists, brands, and creators, hosting customized skill-based mobile games, tournaments, prizing, and CRM workflows.',
+      'Fan engagement app for artists, brands, and creators with skill-based games, tournaments, prizing, and CRM workflows.',
     tags: ['React Native', 'Games', 'Tournaments'],
   },
   {
@@ -111,7 +135,7 @@ const projects = [
     type: 'Gaming Platform',
     url: 'https://gamesee.gg/',
     description:
-      'Free online mini-games platform with puzzle, arcade, strategy, multiplayer, and casual games playable on web and mobile.',
+      'Online mini-games platform with puzzle, arcade, strategy, multiplayer, and casual games playable across web and mobile.',
     tags: ['ReactJS', 'Gaming', 'Mini Games'],
   },
   {
@@ -119,7 +143,7 @@ const projects = [
     type: 'Card-linked Offers',
     url: 'https://luckydiem.com/',
     description:
-      'Card-linked offer network connecting merchants to measurable rewards, cashback, and customer engagement across linked cards and digital wallets.',
+      'Card-linked offer network connecting merchants to measurable rewards, cashback, linked cards, wallets, and engagement workflows.',
     tags: ['Frontend', 'Rewards', 'Offers'],
   },
   {
@@ -127,7 +151,7 @@ const projects = [
     type: 'Car Services Platform',
     url: 'https://gomechanic.in/',
     description:
-      'Automotive service platform for car servicing, repairs, accessories, transparent pricing, pickup slots, and real-time service updates.',
+      'Automotive service platform for car servicing, repairs, accessories, transparent pricing, pickup slots, and service updates.',
     tags: ['Product', 'Service Booking', 'Auto'],
   },
   {
@@ -135,7 +159,7 @@ const projects = [
     type: 'Audio + E-book App',
     url: 'https://play.google.com/store/apps/details?id=com.techhouse.kitabcloud',
     description:
-      'Digital library app for African literature with audiobooks, e-books, podcasts, offline reading, bookmarks, notes, reviews, and native-language content.',
+      'Digital library app for African literature with audiobooks, e-books, podcasts, offline reading, bookmarks, notes, and reviews.',
     tags: ['React Native', 'Audio Books', 'E-books'],
   },
   {
@@ -143,7 +167,7 @@ const projects = [
     type: 'Pet Commerce Platform',
     url: 'https://dev.petsquare.co.nz/',
     description:
-      'Pet-focused commerce platform for account creation, product discovery, shopping, shipping information, and customer-facing pet care workflows.',
+      'Pet commerce platform for account creation, product discovery, shopping, shipping information, and customer-facing workflows.',
     tags: ['Frontend', 'E-commerce', 'Pet Care'],
   },
 ]
@@ -151,23 +175,23 @@ const projects = [
 const skillGroups = [
   {
     icon: Smartphone,
-    title: 'Mobile',
-    skills: ['React Native', 'Expo / CLI', 'iOS + Android', 'App flows'],
+    title: 'Mobile engineering',
+    skills: ['React Native', 'Expo / CLI', 'iOS + Android', 'App store flows', 'Mobile UX'],
   },
   {
     icon: Server,
-    title: 'Backend',
-    skills: ['Node.js', 'Express', 'REST APIs', 'GraphQL', 'Socket.IO'],
+    title: 'Backend systems',
+    skills: ['Node.js', 'Express', 'REST APIs', 'GraphQL', 'Socket.IO', 'Auth flows'],
   },
   {
     icon: Code2,
-    title: 'Frontend',
-    skills: ['ReactJS', 'Admin panels', 'Dashboards', 'Responsive UI'],
+    title: 'Web platforms',
+    skills: ['ReactJS', 'Admin panels', 'Dashboards', 'Responsive UI', 'Internal tools'],
   },
   {
     icon: Database,
-    title: 'Data',
-    skills: ['MySQL', 'MongoDB', 'Chat history', 'Structured records'],
+    title: 'Data and workflows',
+    skills: ['MySQL', 'MongoDB', 'Chat history', 'Structured records', 'Reporting views'],
   },
 ]
 
@@ -180,6 +204,7 @@ function App() {
         <a className="brand" href="#top" aria-label="Vikas Tiwari home">
           <span className="brand-mark">VT</span>
           <span>Vikas Tiwari</span>
+          <small>Full Stack Developer</small>
         </a>
 
         <nav className={menuOpen ? 'nav nav-open' : 'nav'} aria-label="Primary">
@@ -202,67 +227,65 @@ function App() {
       </header>
 
       <section className="hero-section" id="top">
-        <div className="star-field" aria-hidden="true" />
         <div className="hero-shell">
-          <div className="orbit-card" aria-hidden="true">
-            <span className="orbital-ring" />
-            <img className="profile-photo" src="/vikas-profile.jpg" alt="" />
+          <div className="hero-content">
+            <p className="eyebrow">
+              <Sparkles size={16} /> Open to MNC product engineering roles
+            </p>
+            <h1>Full Stack Developer building mobile apps, APIs, and business platforms.</h1>
+            <p className="hero-copy">
+              5+ years shipping React Native, ReactJS, Node.js, REST, GraphQL, Socket.IO,
+              MySQL, and MongoDB systems for customer-facing products and internal operations.
+            </p>
+
+            <div className="hero-actions">
+              <a className="primary-action" href="/vikas-tiwari-resume.pdf" download>
+                <Download size={18} /> Download Resume
+              </a>
+              <a className="secondary-action" href="mailto:tvikas6523@gmail.com">
+                <Mail size={18} /> Contact Me
+              </a>
+            </div>
+
+            <div className="contact-strip" aria-label="Contact details">
+              <a href="mailto:tvikas6523@gmail.com">
+                <Mail size={16} /> tvikas6523@gmail.com
+              </a>
+              <a href="tel:+917973070600">
+                <Phone size={16} /> +91 79730 70600
+              </a>
+              <span>
+                <MapPin size={16} /> Saket, New Delhi
+              </span>
+            </div>
           </div>
 
-          <p className="eyebrow">
-            <Sparkles size={16} /> Available for full stack and mobile roles
-          </p>
-          <h1>Senior Full Stack Software Developer for mobile-first products.</h1>
-          <p className="hero-copy">
-            I build React Native apps, Node.js backends, admin panels, and operational
-            tools with clean architecture, reliable APIs, and product-focused execution.
-          </p>
-
-          <div className="hero-actions">
-            <a className="primary-action" href="/vikas-tiwari-resume.pdf" download>
-              <Download size={18} /> Download Resume
-            </a>
-            <a className="secondary-action" href="mailto:tvikas6523@gmail.com">
-              <Mail size={18} /> Contact Me
-            </a>
-          </div>
-
-          <div className="contact-strip" aria-label="Contact details">
-            <a href="mailto:tvikas6523@gmail.com">
-              <Mail size={16} /> tvikas6523@gmail.com
-            </a>
-            <a href="tel:+917973070600">
-              <Phone size={16} /> +91 79730 70600
-            </a>
-            <span>
-              <MapPin size={16} /> Saket, New Delhi
-            </span>
-          </div>
+          <aside className="hero-panel" aria-label="Candidate summary">
+            <img className="profile-photo" src="/vikas-profile.jpg" alt="Vikas Tiwari" />
+            <div>
+              <span className="availability">Available for interviews</span>
+              <h2>Vikas Tiwari</h2>
+              <p>Full Stack Developer, Mobile App + Backend</p>
+            </div>
+            <div className="hero-panel-grid">
+              <span><CheckCircle2 size={16} /> React Native</span>
+              <span><CheckCircle2 size={16} /> Node.js APIs</span>
+              <span><CheckCircle2 size={16} /> ReactJS</span>
+              <span><CheckCircle2 size={16} /> MySQL + MongoDB</span>
+            </div>
+            <div className="panel-links">
+              <a href="https://www.linkedin.com/in/vikas-tiwari-446b1b140/" target="_blank" rel="noreferrer">
+                <BriefcaseBusiness size={17} /> LinkedIn
+              </a>
+              <a href="https://github.com/Aman121K" target="_blank" rel="noreferrer">
+                <Code2 size={17} /> GitHub
+              </a>
+            </div>
+          </aside>
         </div>
-      </section>
-
-      <section className="intro-band" id="profile">
-        <div className="section-heading">
-          <p className="eyebrow">Profile</p>
-          <h2>End-to-end ownership across app, backend, and business workflows.</h2>
-        </div>
-        <div className="intro-grid">
-          <p>
-            Since June 2020, I have been designing, building, and scaling mobile
-            applications and backend platforms used by real customers and internal teams.
-            My strongest work sits where product experience meets engineering reliability:
-            React Native apps, Node.js APIs, admin panels, dashboards, and real-time
-            communication systems.
-          </p>
-          <div className="highlight-list">
-            {highlights.map((item) => (
-              <span key={item}>{item}</span>
-            ))}
-          </div>
-        </div>
-        <div className="stats-grid">
+        <div className="hero-proof" aria-label="Career highlights">
           {stats.map((stat) => (
-            <div className="stat-card" key={stat.label}>
+            <div className="proof-card" key={stat.label}>
               <strong>{stat.value}</strong>
               <span>{stat.label}</span>
             </div>
@@ -270,10 +293,41 @@ function App() {
         </div>
       </section>
 
+      <section className="intro-band" id="profile">
+        <div className="section-heading">
+          <p className="eyebrow">Profile</p>
+          <h2>Engineer who can own the complete path from product requirement to production release.</h2>
+        </div>
+        <div className="intro-grid">
+          <div>
+            <p>
+              Since June 2020, I have been designing, building, and maintaining mobile
+              applications, backend platforms, admin dashboards, and internal tools used by
+              real customers and business teams. My strongest work sits where product
+              experience meets engineering reliability.
+            </p>
+            <div className="value-grid">
+              {valuePillars.map(({ icon: Icon, title, text }) => (
+                <article key={title}>
+                  <Icon size={20} />
+                  <h3>{title}</h3>
+                  <p>{text}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+          <div className="highlight-list">
+            {highlights.map((item) => (
+              <span key={item}>{item}</span>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section className="section" id="experience">
         <div className="section-heading">
           <p className="eyebrow">Experience</p>
-          <h2>Professional work shaped by production pressure and business outcomes.</h2>
+          <h2>Experience shaped by production ownership, delivery pressure, and business workflows.</h2>
         </div>
         <div className="timeline">
           {experience.map((item) => (
@@ -303,7 +357,7 @@ function App() {
       <section className="section project-section" id="projects">
         <div className="section-heading">
           <p className="eyebrow">Selected Work</p>
-          <h2>Systems that support customers, teams, and operations.</h2>
+          <h2>Selected systems that show customer impact, internal tooling, and platform range.</h2>
         </div>
         <div className="project-grid">
           {projects.map((project) => (
@@ -331,7 +385,7 @@ function App() {
       <section className="section skills-section" id="skills">
         <div className="section-heading">
           <p className="eyebrow">Skills</p>
-          <h2>Practical stack for shipping modern product software.</h2>
+          <h2>Practical stack for shipping modern product software in enterprise teams.</h2>
         </div>
         <div className="skills-grid">
           {skillGroups.map(({ icon: Icon, title, skills }) => (
@@ -376,13 +430,37 @@ function App() {
         </div>
       </section>
 
+      <section className="section credibility-section" aria-label="Why hire Vikas">
+        <div className="section-heading">
+          <p className="eyebrow">Hiring Signal</p>
+          <h2>What MNC teams can expect from day one.</h2>
+        </div>
+        <div className="credibility-grid">
+          <article>
+            <Layers3 size={24} />
+            <h3>Cross-functional execution</h3>
+            <p>Works across product, backend, mobile, web, QA, and business stakeholders without losing delivery momentum.</p>
+          </article>
+          <article>
+            <Globe2 size={24} />
+            <h3>Product breadth</h3>
+            <p>Experience spans commerce, gaming, fan engagement, automotive services, pet commerce, media, and internal systems.</p>
+          </article>
+          <article>
+            <ShieldCheck size={24} />
+            <h3>Maintainable ownership</h3>
+            <p>Builds features with clean handoff, readable implementation, stable APIs, and practical release support.</p>
+          </article>
+        </div>
+      </section>
+
       <section className="contact-section" id="contact">
         <div>
           <p className="eyebrow">Contact</p>
-          <h2>Let’s discuss how I can contribute to your engineering team.</h2>
+          <h2>Let’s discuss full stack, mobile, or product engineering opportunities.</h2>
           <p>
-            Best fit: React Native, ReactJS, Node.js backend, admin systems, and
-            full stack product roles.
+            Best fit: React Native, ReactJS, Node.js backend, admin systems, and full stack
+            product roles in teams that value ownership and reliable delivery.
           </p>
         </div>
         <div className="contact-actions">
@@ -412,7 +490,7 @@ function App() {
       </section>
 
       <footer>
-        <span>Handcrafted in React for Vikas Tiwari.</span>
+        <span>Vikas Tiwari · Full Stack Developer · React Native · Node.js · ReactJS</span>
         <div>
           <a href="mailto:tvikas6523@gmail.com" aria-label="Email">
             <Mail size={18} />
