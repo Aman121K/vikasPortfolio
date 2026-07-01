@@ -1,5 +1,6 @@
 import {
   ArrowUpRight,
+  Award,
   BriefcaseBusiness,
   CheckCircle2,
   Code2,
@@ -15,6 +16,7 @@ import {
   ShieldCheck,
   Smartphone,
   Sparkles,
+  Target,
   Users,
   Workflow,
   X,
@@ -25,16 +27,23 @@ import './App.css'
 const navItems = ['Profile', 'Experience', 'Projects', 'Skills', 'Contact']
 
 const stats = [
-  { value: '5+', label: 'Years in production engineering' },
-  { value: '20+', label: 'Apps, portals, and dashboards shipped' },
-  { value: '4', label: 'Core strengths: Mobile, Web, APIs, Data' },
+  { value: '5+', label: 'Years building production apps and business platforms' },
+  { value: '20+', label: 'Customer apps, admin portals, APIs, and dashboards shipped' },
+  { value: '4', label: 'Strong areas: React Native, ReactJS, Node.js, databases' },
 ]
 
 const highlights = [
-  'Owns delivery across discovery, frontend, backend, release, and maintenance.',
-  'Strong fit for product engineering teams that need mobile plus backend ownership.',
-  'Comfortable with customer-facing apps, internal tools, admin workflows, and operations portals.',
-  'Builds with REST, GraphQL, Socket.IO, MySQL, MongoDB, React, React Native, and Node.js.',
+  'Can take a feature from requirement discussion to API design, UI implementation, testing support, release, and maintenance.',
+  'Strong match for MNC product teams hiring React Native, ReactJS, Node.js, or full stack engineers.',
+  'Has worked on customer-facing commerce apps, real-time chat, internal portals, admin dashboards, and operational workflows.',
+  'Uses React Native, ReactJS, Node.js, REST, GraphQL, Socket.IO, MySQL, and MongoDB in production work.',
+]
+
+const recruiterSignals = [
+  { label: 'Primary role', value: 'Full Stack Developer' },
+  { label: 'Best fit', value: 'Mobile + Backend product teams' },
+  { label: 'Location', value: 'New Delhi, India' },
+  { label: 'Notice', value: 'Available for interviews' },
 ]
 
 const valuePillars = [
@@ -230,13 +239,21 @@ function App() {
         <div className="hero-shell">
           <div className="hero-content">
             <p className="eyebrow">
-              <Sparkles size={16} /> Open to MNC product engineering roles
+              <Sparkles size={16} /> Full stack developer for MNC product teams
             </p>
-            <h1>Full Stack Developer building mobile apps, APIs, and business platforms.</h1>
+            <h1>React Native + Node.js engineer who ships complete product features.</h1>
             <p className="hero-copy">
-              5+ years shipping React Native, ReactJS, Node.js, REST, GraphQL, Socket.IO,
-              MySQL, and MongoDB systems for customer-facing products and internal operations.
+              I build mobile apps, web dashboards, APIs, and internal platforms used by
+              customers and business teams. My work is strongest where product clarity,
+              backend reliability, and release ownership all matter.
             </p>
+
+            <div className="role-strip" aria-label="Role fit summary">
+              <span><Target size={16} /> React Native</span>
+              <span><Server size={16} /> Node.js APIs</span>
+              <span><Code2 size={16} /> ReactJS dashboards</span>
+              <span><Database size={16} /> MySQL + MongoDB</span>
+            </div>
 
             <div className="hero-actions">
               <a className="primary-action" href="/vikas-tiwari-resume.pdf" download>
@@ -261,17 +278,27 @@ function App() {
           </div>
 
           <aside className="hero-panel" aria-label="Candidate summary">
-            <img className="profile-photo" src="/vikas-profile.jpg" alt="Vikas Tiwari" />
-            <div>
-              <span className="availability">Available for interviews</span>
-              <h2>Vikas Tiwari</h2>
-              <p>Full Stack Developer, Mobile App + Backend</p>
+            <div className="profile-row">
+              <img className="profile-photo" src="/vikas-profile.jpg" alt="Vikas Tiwari" />
+              <div>
+                <span className="availability">MNC-ready profile</span>
+                <h2>Vikas Tiwari</h2>
+                <p>Full Stack Developer, Mobile App + Backend</p>
+              </div>
+            </div>
+            <div className="recruiter-card">
+              {recruiterSignals.map((signal) => (
+                <div key={signal.label}>
+                  <span>{signal.label}</span>
+                  <strong>{signal.value}</strong>
+                </div>
+              ))}
             </div>
             <div className="hero-panel-grid">
-              <span><CheckCircle2 size={16} /> React Native</span>
-              <span><CheckCircle2 size={16} /> Node.js APIs</span>
-              <span><CheckCircle2 size={16} /> ReactJS</span>
-              <span><CheckCircle2 size={16} /> MySQL + MongoDB</span>
+              <span><CheckCircle2 size={16} /> Product delivery</span>
+              <span><CheckCircle2 size={16} /> API ownership</span>
+              <span><CheckCircle2 size={16} /> Mobile releases</span>
+              <span><CheckCircle2 size={16} /> Internal tools</span>
             </div>
             <div className="panel-links">
               <a href="https://www.linkedin.com/in/vikas-tiwari-446b1b140/" target="_blank" rel="noreferrer">
@@ -296,15 +323,15 @@ function App() {
       <section className="intro-band" id="profile">
         <div className="section-heading">
           <p className="eyebrow">Profile</p>
-          <h2>Engineer who can own the complete path from product requirement to production release.</h2>
+          <h2>A practical engineer who can join a team, understand the product, and start shipping useful work.</h2>
         </div>
         <div className="intro-grid">
           <div>
             <p>
-              Since June 2020, I have been designing, building, and maintaining mobile
-              applications, backend platforms, admin dashboards, and internal tools used by
-              real customers and business teams. My strongest work sits where product
-              experience meets engineering reliability.
+              Since June 2020, I have designed, built, and maintained mobile applications,
+              backend platforms, admin dashboards, and internal tools. I am comfortable
+              reading requirements, breaking work into deliverable parts, integrating APIs,
+              fixing release issues, and supporting features after launch.
             </p>
             <div className="value-grid">
               {valuePillars.map(({ icon: Icon, title, text }) => (
@@ -327,7 +354,7 @@ function App() {
       <section className="section" id="experience">
         <div className="section-heading">
           <p className="eyebrow">Experience</p>
-          <h2>Experience shaped by production ownership, delivery pressure, and business workflows.</h2>
+          <h2>Recent experience with real products, business workflows, and release responsibility.</h2>
         </div>
         <div className="timeline">
           {experience.map((item) => (
@@ -357,7 +384,7 @@ function App() {
       <section className="section project-section" id="projects">
         <div className="section-heading">
           <p className="eyebrow">Selected Work</p>
-          <h2>Selected systems that show customer impact, internal tooling, and platform range.</h2>
+          <h2>Projects grouped around what MNC screeners look for: product range, ownership, and relevant stack.</h2>
         </div>
         <div className="project-grid">
           {projects.map((project) => (
@@ -385,7 +412,7 @@ function App() {
       <section className="section skills-section" id="skills">
         <div className="section-heading">
           <p className="eyebrow">Skills</p>
-          <h2>Practical stack for shipping modern product software in enterprise teams.</h2>
+          <h2>Technical skills organized by how they apply to real product delivery.</h2>
         </div>
         <div className="skills-grid">
           {skillGroups.map(({ icon: Icon, title, skills }) => (
@@ -447,9 +474,9 @@ function App() {
             <p>Experience spans commerce, gaming, fan engagement, automotive services, pet commerce, media, and internal systems.</p>
           </article>
           <article>
-            <ShieldCheck size={24} />
-            <h3>Maintainable ownership</h3>
-            <p>Builds features with clean handoff, readable implementation, stable APIs, and practical release support.</p>
+            <Award size={24} />
+            <h3>Interview-ready clarity</h3>
+            <p>Can explain responsibilities, architecture choices, project tradeoffs, and delivered work clearly in screening rounds.</p>
           </article>
         </div>
       </section>
